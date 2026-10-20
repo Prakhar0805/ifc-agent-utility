@@ -1,0 +1,103 @@
+# Information-flow labels for every AgentDojo tool.
+#
+#   reads:          what kind of data the tool's result exposes to the agent
+#                     private   - the user's own data (contacts, balance, own sent mail, etc.)
+#                     trusted   - system / catalog data nobody else can write to (prices, dates,etc.)
+#                     untrusted - content written by someone other than the user (emails received,
+#                                 files, web pages, Slack messages, reviews, transaction subjects)
+#                     none      - the tool returns nothing worth reading (pure action)
+#   sends_external: true if the call moves data to another party or gives a third party access
+#                   (email, message, post, share, invite, booking, payment)
+#
+# The rule under test uses only two of these:
+#   once a tool with  reads: untrusted  has been called, every later call to a tool with
+#   sends_external: true  is blocked.
+
+workspace:
+  # email
+  send_email:                       {reads: none,      sends_external: true}
+  delete_email:                     {reads: none,      sends_external: false}
+  get_unread_emails:                {reads: untrusted, sends_external: false}
+  get_sent_emails:                  {reads: private,   sends_external: false}
+  get_received_emails:              {reads: untrusted, sends_external: false}
+  get_draft_emails:                 {reads: private,   sends_external: false}
+  search_emails:                    {reads: untrusted, sends_external: false}
+  search_contacts_by_name:          {reads: private,   sends_external: false}
+  search_contacts_by_email:         {reads: private,   sends_external: false}
+  # calendar
+  get_current_day:                  {reads: trusted,   sends_external: false}
+  search_calendar_events:           {reads: untrusted, sends_external: false}
+  get_day_calendar_events:          {reads: untrusted, sends_external: false}
+  create_calendar_event:            {reads: none,      sends_external: true}
+  cancel_calendar_event:            {reads: none,      sends_external: true}
+  reschedule_calendar_event:        {reads: untrusted, sends_external: true}
+  add_calendar_event_participants:  {reads: untrusted, sends_external: true}
+  # cloud drive
+  append_to_file:                   {reads: untrusted, sends_external: false}
+  search_files_by_filename:         {reads: untrusted, sends_external: false}
+  get_file_by_id:                   {reads: untrusted, sends_external: false}
+  list_files:                       {reads: untrusted, sends_external: false}
+  search_files:                     {reads: untrusted, sends_external: false}
+  create_file:                      {reads: none,      sends_external: false}
+  delete_file:                      {reads: untrusted, sends_external: false}
+  share_file:                       {reads: untrusted, sends_external: true}
+
+slack:
+  get_channels:                     {reads: untrusted, sends_external: false}
+  add_user_to_channel:              {reads: none,      sends_external: true}
+  read_channel_messages:            {reads: untrusted, sends_external: false}
+  read_inbox:                       {reads: untrusted, sends_external: false}
+  send_direct_message:              {reads: none,      sends_external: true}
+  send_channel_message:             {reads: none,      sends_external: true}
+  get_users_in_channel:             {reads: private,   sends_external: false}
+  invite_user_to_slack:             {reads: none,      sends_external: true}
+  remove_user_from_slack:           {reads: none,      sends_external: false}
+  get_webpage:                      {reads: untrusted, sends_external: false}
+  post_webpage:                     {reads: none,      sends_external: true}
+
+travel:
+  get_user_information:                       {reads: private,   sends_external: false}
+  # hotels
+  get_all_hotels_in_city:                     {reads: trusted,   sends_external: false}
+  get_hotels_prices:                          {reads: trusted,   sends_external: false}
+  get_hotels_address:                         {reads: trusted,   sends_external: false}
+  get_rating_reviews_for_hotels:              {reads: untrusted, sends_external: false}
+  # restaurants
+  get_all_restaurants_in_city:                {reads: trusted,   sends_external: false}
+  get_cuisine_type_for_restaurants:           {reads: trusted,   sends_external: false}
+  get_restaurants_address:                    {reads: trusted,   sends_external: false}
+  get_rating_reviews_for_restaurants:         {reads: untrusted, sends_external: false}
+  get_dietary_restrictions_for_all_restaurants: {reads: trusted, sends_external: false}
+  get_contact_information_for_restaurants:    {reads: trusted,   sends_external: false}
+  get_price_for_restaurants:                  {reads: trusted,   sends_external: false}
+  check_restaurant_opening_hours:             {reads: trusted,   sends_external: false}
+  # car rental
+  get_all_car_rental_companies_in_city:       {reads: trusted,   sends_external: false}
+  get_car_types_available:                    {reads: trusted,   sends_external: false}
+  get_rating_reviews_for_car_rental:          {reads: untrusted, sends_external: false}
+  get_car_fuel_options:                       {reads: trusted,   sends_external: false}
+  get_car_rental_address:                     {reads: trusted,   sends_external: false}
+  get_car_price_per_day:                      {reads: trusted,   sends_external: false}
+  # bookings and communication
+  reserve_hotel:                              {reads: none,      sends_external: true}
+  reserve_car_rental:                         {reads: none,      sends_external: true}
+  reserve_restaurant:                         {reads: none,      sends_external: true}
+  get_flight_information:                     {reads: trusted,   sends_external: false}
+  send_email:                                 {reads: none,      sends_external: true}
+  create_calendar_event:                      {reads: none,      sends_external: true}
+  cancel_calendar_event:                      {reads: none,      sends_external: true}
+  search_calendar_events:                     {reads: private,   sends_external: false}
+  get_day_calendar_events:                    {reads: private,   sends_external: false}
+
+banking:
+  get_iban:                         {reads: private,   sends_external: false}
+  send_money:                       {reads: none,      sends_external: true}
+  schedule_transaction:             {reads: none,      sends_external: true}
+  update_scheduled_transaction:     {reads: none,      sends_external: true}
+  get_balance:                      {reads: private,   sends_external: false}
+  get_most_recent_transactions:     {reads: untrusted, sends_external: false}
+  get_scheduled_transactions:       {reads: private,   sends_external: false}
+  read_file:                        {reads: untrusted, sends_external: false}
+  get_user_info:                    {reads: private,   sends_external: false}
+  update_password:                  {reads: none,      sends_external: false}
+  update_user_info:                 {reads: none,      sends_external: false}
