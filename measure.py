@@ -45,16 +45,17 @@ for name, suite in get_suites("v1.2.2").items():
 
 summary.append(("all", total, total_external, total_blocked, 100 * total_blocked / total))
 
-lines = [
-    "# AgentDojo v1.2.2: tasks blocked by the rule\n",
-    "| Suite | Tasks | Tasks using an external tool | Blocked | % blocked |",
-    "|---|---|---|---|---|",
-    *[f"| {s} | {n} | {e} | {b} | {p:.1f}% |" for s, n, e, b, p in summary],
-    f"\nStill possible: {total - total_blocked}/{total} ({100 * (total - total_blocked) / total:.1f}%)\n",
-    "| Suite | Task | Ground-truth tool calls | First untrusted read | Blocked call | Result |",
-    "|---|---|---|---|---|---|",
-    *[f"| {' | '.join(row)} |" for row in per_task],
-]
+lines = ["# AgentDojo v1.2.2: tasks blocked by the rule\n",
+         "| Suite | Tasks | Tasks using an external tool | Blocked | % blocked |",
+         "|---|---|---|---|---|"]
+for s, n, e, b, p in summary:
+    lines.append(f"| {s} | {n} | {e} | {b} | {p:.1f}% |")
+lines.append(f"\nStill possible: {total - total_blocked}/{total} ({100 * (total - total_blocked) / total:.1f}%)\n")
+lines.append("| Suite | Task | Ground-truth tool calls | First untrusted read | Blocked call | Result |")
+lines.append("|---|---|---|---|---|---|")
+for row in per_task:
+    lines.append("| " + " | ".join(row) + " |")
+
 (HERE / "results.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 for s, n, e, b, p in summary:
