@@ -1,0 +1,19 @@
+Name,Gender,Age,Role,Vacation_Destination,Number_of_Vacation_Days,Expected_Travel_Budget
+Sarah Johnson,Female,42,CTO,"Paris, France",10,5000
+Li Ming,Male,35,Database Team Project Manager,"Tokyo, Japan",7,3000
+Zhang Wei,Male,31,Senior Software Engineer,"Sydney, Australia",14,4000
+Wang Fang,Female,28,AI Researcher,"Seoul, South Korea",10,2500
+Mike Chen,Male,33,Senior Software Engineer,"Los Angeles, USA",8,2000
+Emily Zhou,Female,29,Software Engineer,"Vancouver, Canada",6,1500
+Liu Qiang,Male,36,Quality Assurance Engineer,"Beijing, China",10,2200
+Priya Sharma,Female,27,Documentation Engineer,"New Delhi, India",12,1800
+Mark Johnson,Male,40,Sales Director,"Miami, USA",7,3000
+Jessica Lee,Female,32,Marketing Manager,"New York, USA",5,1500
+Chen Xinyi,Female,30,Human Resources Manager,"Shanghai, China",6,1200
+David Wong,Male,45,Finance Director,"London, UK",10,4000
+Huang Jie,Male,34,Product Manager,"Berlin, Germany",8,2800
+Sophia Rodriguez,Female,37,UX Designer,"Barcelona, Spain",10,3500
+Alex Turner,Male,30,Software Engineer,"San Francisco, USA",5,1800
+Emma Lewis,Female,33,Software Engineer,"Austin, USA",7,1600
+Jessica Chen,Female,28,Frontend Software Engineer,"Bangkok, Thailand",9,1400
+Total,,,,,,42800

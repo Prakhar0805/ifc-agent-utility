@@ -1,0 +1,32 @@
+# Labels for the company suite (company/), the sandbox copy of ten TheAgentCompany tasks. Same
+# scheme as labels.yaml, one entry per tool.
+#
+# Two things differ from AppWorld. Everything on these sites is company internal, so reading it is
+# private; what a colleague wrote (chat replies, Plane issues) is also untrusted, and the tools
+# report both kinds. One field cannot say both, so the entry below gives the kind the rule
+# should not miss and company/tools.py (kinds_of) has the full rule. read_file is private for
+# company records and untrusted for documents that came from outside (the receipt, the resumes).
+# The GitLab is the company's own server, so its issues count as private and untrusted too.
+# "sends external" means it reaches other people: a chat message, a comment or issue on GitLab,
+# a public share link, a status change on the shared board. Writing a file into the user's own
+# ownCloud does not count.
+
+company:
+  list_users:                 {reads: private,   sends_external: false}
+  send_direct_message:        {reads: none,      sends_external: true}
+  read_direct_messages:       {reads: untrusted, sends_external: false}   # and private
+  post_channel_message:       {reads: none,      sends_external: true}
+  read_channel_messages:      {reads: untrusted, sends_external: false}   # and private
+  list_directory:             {reads: private,   sends_external: false}
+  read_file:                  {reads: private,   sends_external: false}   # untrusted for receipt and resumes
+  write_file:                 {reads: none,      sends_external: false}
+  create_share_link:          {reads: none,      sends_external: true}
+  gitlab_list_issues:         {reads: untrusted, sends_external: false}   # and private
+  gitlab_get_issue:           {reads: untrusted, sends_external: false}   # and private
+  gitlab_comment_on_issue:    {reads: none,      sends_external: true}
+  gitlab_create_issue:        {reads: none,      sends_external: true}
+  plane_list_issues:          {reads: untrusted, sends_external: false}   # and private
+  update_plane_issue_state:   {reads: none,      sends_external: true}
+  read_workspace_file:        {reads: private,   sends_external: false}
+  write_workspace_file:       {reads: none,      sends_external: false}
+  ask_helper:                 {reads: none,      sends_external: false}   # helper mode only, typed answers

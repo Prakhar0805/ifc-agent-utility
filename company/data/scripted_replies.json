@@ -1,0 +1,51 @@
+{
+ "admin-check-employees-budget-and-reply": {
+  "Jessica Lee": "Marketing needs five Ergonomic Office Chair (Herman Miller), five Standing Desk (Electric Adjustable) and three Meeting Table.",
+  "Huang Jie": "Product needs three Desktop Computer (HP WorkStation), three Wireless Mouse and three Wireless Keyboard.",
+  "Chen Xinyi": "HR needs ten Laptop (Dell XPS 15) and ten Monitor Stand."
+ },
+ "hr-mass-survey": {
+  "Sarah Johnson": "Paris, France most likely. Around 10 days. Budget 4000, actually make that 5000 dollars.",
+  "Li Ming": "Tokyo, Japan. A week. About 3000 dollars.",
+  "Zhang Wei": "Sydney, Australia. Two weeks. Around 4000 dollars.",
+  "Wang Fang": "Seoul, South Korea. About 10 days. 2500 dollars.",
+  "Mike Chen": "Why are you asking? Fine: Los Angeles, USA, about 8 days, around 2000 dollars.",
+  "Emily Zhou": "New York first, then no, Vancouver, Canada. 6 days, around 1500 dollars.",
+  "Liu Qiang": "Beijing, China. A week, approximately 10 days actually. About 2200 dollars.",
+  "Priya Sharma": "New Delhi, India. Around 12 days. About 1800 dollars.",
+  "Mark Johnson": "Miami, USA. About a week. Around 3000 dollars.",
+  "Jessica Lee": "New York, USA. Roughly 5 days. About 1500 dollars.",
+  "Chen Xinyi": "Shanghai, China. 6 days. About 1200 dollars.",
+  "David Wong": "London, UK. Could be 10 days. Around 4000 dollars.",
+  "Huang Jie": "Berlin, Germany. About a week, 8 days. 2800 dollars.",
+  "Sophia Rodriguez": "Barcelona, Spain. Around 10 days. 3500 dollars.",
+  "Alex Turner": "San Francisco, USA. Around 5 days. Around 1800 dollars.",
+  "Emma Lewis": "Austin, USA. Around a week. Around 1600 dollars.",
+  "Jessica Chen": "Bangkok, Thailand. Around 9 days. Around 1400 dollars."
+ },
+ "pm-check-backlog-update-issues": {
+  "Liu Qiang": "Yes, the issue has been completed."
+ },
+ "hr-resume-screening": {
+  "Chen Xinyi": "Due to clearance requirement, this position can only hire green card holders or U.S. citizens. The expected salary is 220k."
+ },
+ "hr-new-grad-job-description-2": {
+  "Zhang Wei": "Key Responsibilities: First, work with a team to develop and extend The Agent Company's product. Two, design and build innovative technologies in a large distributed computing environment and help lead fundamental changes in the industry. Three, create solutions to run predictions on distributed systems with exposure to innovative technologies at incredible scale and speed. Four, own full software development lifecycle: design, development, testing, and operating in production. Five, build solutions with a high level of reliability, scalability, and security. Minimum Qualification: First, graduated less than 12 months ago or about to complete a Bachelor's or Master's Degree in Computer Science, Computer Engineering, or related fields at time of application. Two, programming experience in one or more programming languages (e.g., Python, C, C++, Java). Three, knowledge of Computer Science fundamentals such as object-oriented design, algorithm design, data structures, problem solving and complexity analysis. Four, experience working with data structures or algorithms during coursework/projects, research, internships, or practical experience in school or work (e.g., open-source coding). Preferred Qualification: First, previous technical internship(s) if applicable. Two, experience with distributed, multi-tiered systems, algorithms, and relational databases. Three, adept at handling ambiguous or undefined problems as well as ability to think abstractly. Salary Range: 120000 - 150000 USD."
+ },
+ "sde-reply-community-issue-by-asking-npc": {
+  "Mike Chen": "Adding a few seconds to the timeout limit can resolve most timeout issues."
+ },
+ "pm-send-notification-to-corresponding-user": {
+  "Jessica Lee": "I plan to launch a kickoff meeting for the main Q4 project. Please notify David Wong, Huang Jie and Mark Johnson to join the meeting.",
+  "David Wong": "Got it, thanks.",
+  "Huang Jie": "Got it, thanks.",
+  "Mark Johnson": "Got it, thanks."
+ },
+ "pm-ask-issue-assignee-for-issue-status-and-update-in-plane": {
+  "Zhang Wei": "I have completed the issue."
+ },
+ "qa-update-issue-status-according-to-colleagues": {
+  "Wang Fang": "In Progress",
+  "Mike Chen": "Done"
+ }
+}

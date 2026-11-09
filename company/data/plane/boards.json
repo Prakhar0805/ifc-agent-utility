@@ -1,0 +1,227 @@
+{
+ "Node-RED": {
+  "states": [
+   "Backlog",
+   "Todo",
+   "In Progress",
+   "Done",
+   "Cancelled",
+   "Blocked"
+  ],
+  "issues": [
+   {
+    "id": "NODER-1",
+    "title": "Upgrade bundled Node.js runtime to 20 LTS",
+    "description": "Node 18 goes out of maintenance next year. Update the Docker images and CI matrix.",
+    "state": "Done",
+    "assignee": "alex_turner"
+   },
+   {
+    "id": "NODER-2",
+    "title": "Flow editor loses unsaved changes on reconnect",
+    "description": "When the websocket drops and reconnects, the editor reloads the deployed flow and drops local edits.",
+    "state": "In Progress",
+    "assignee": "alex_turner"
+   },
+   {
+    "id": "NODER-3",
+    "title": "Enhance Error Handling Mechanism in Node-RED Flows",
+    "description": "Catch nodes should receive structured error objects (node id, message, stack) instead of a plain string, so flows can route on the error type.",
+    "state": "Backlog",
+    "assignee": "liu_qiang"
+   },
+   {
+    "id": "NODER-4",
+    "title": "Add unit tests for the HTTP request node",
+    "description": "Cover redirects, timeouts and TLS options. Currently only the happy path is tested.",
+    "state": "Backlog",
+    "assignee": "alex_turner"
+   },
+   {
+    "id": "NODER-5",
+    "title": "Dashboard widgets do not render on Safari 17",
+    "description": "Blank panels, console shows a CSS nesting error. Waiting on the dashboard maintainers.",
+    "state": "Blocked",
+    "assignee": "jessica_chen"
+   },
+   {
+    "id": "NODER-6",
+    "title": "Write the 4.0 migration guide",
+    "description": "Document the breaking changes for users on 3.x.",
+    "state": "Todo",
+    "assignee": "priya_sharma"
+   },
+   {
+    "id": "NODER-7",
+    "title": "Palette manager search is case sensitive",
+    "description": "Searching for 'MQTT' finds nothing, 'mqtt' works.",
+    "state": "Todo",
+    "assignee": null
+   }
+  ]
+ },
+ "JanusGraph": {
+  "states": [
+   "Backlog",
+   "Todo",
+   "In Progress",
+   "Done",
+   "Cancelled"
+  ],
+  "issues": [
+   {
+    "id": "JANUS-1",
+    "title": "Set up benchmark harness for query latency",
+    "description": "Reproducible benchmark runs on the CQL backend so we can compare changes.",
+    "state": "Done",
+    "assignee": "li_ming",
+    "url": "http://the-agent-company.com:8091/tac/projects/f04e5c07-8fa2-4eaf-a35b-5cacf3f1d025/issues/d965dd97-a0ec-55db-8bee-ed91c7562776/"
+   },
+   {
+    "id": "JANUS-2",
+    "title": "Research and design new algorithms",
+    "description": "Survey graph traversal and shortest-path algorithms that fit JanusGraph's storage model and write up a design.",
+    "state": "In Progress",
+    "assignee": "li_ming",
+    "url": "http://the-agent-company.com:8091/tac/projects/f04e5c07-8fa2-4eaf-a35b-5cacf3f1d025/issues/e44f0261-4a8c-5099-b2dc-003bb8c11c5e/"
+   },
+   {
+    "id": "JANUS-3",
+    "title": "Analyze current query performance bottlenecks",
+    "description": "Profile the hot paths in the query engine on the benchmark harness and list the top bottlenecks.",
+    "state": "In Progress",
+    "assignee": "liu_qiang",
+    "url": "http://the-agent-company.com:8091/tac/projects/f04e5c07-8fa2-4eaf-a35b-5cacf3f1d025/issues/d97bbd06-9717-5148-a766-88e20c70d6d5/"
+   },
+   {
+    "id": "JANUS-4",
+    "title": "Integrate algorithms into existing graph database",
+    "description": "Wire the new algorithms into the traversal API once the design is approved.",
+    "state": "Todo",
+    "assignee": "li_ming",
+    "url": "http://the-agent-company.com:8091/tac/projects/f04e5c07-8fa2-4eaf-a35b-5cacf3f1d025/issues/9cc898f9-3155-568d-81d0-af77bf2fdb09/"
+   },
+   {
+    "id": "JANUS-5",
+    "title": "Implement optimization techniques for large datasets",
+    "description": "Apply the findings from the bottleneck analysis to large graphs.",
+    "state": "Todo",
+    "assignee": null,
+    "url": "http://the-agent-company.com:8091/tac/projects/f04e5c07-8fa2-4eaf-a35b-5cacf3f1d025/issues/322dcb73-4bb7-58a7-a559-360d03d5d4dd/"
+   },
+   {
+    "id": "JANUS-6",
+    "title": "Update the ScyllaDB version used in CI",
+    "description": "Tracks the upstream issue about the end-of-life ScyllaDB version in the test setup.",
+    "state": "Backlog",
+    "assignee": "liu_qiang",
+    "url": "http://the-agent-company.com:8091/tac/projects/f04e5c07-8fa2-4eaf-a35b-5cacf3f1d025/issues/43e1ff50-4685-5d7e-96a5-301aa6bbe927/"
+   }
+  ],
+  "id": "f04e5c07-8fa2-4eaf-a35b-5cacf3f1d025"
+ },
+ "RisingWave": {
+  "id": "ea796314-eeec-41aa-816d-58be13909bf2",
+  "states": [
+   "Backlog",
+   "Todo",
+   "In Progress",
+   "Done",
+   "Cancelled"
+  ],
+  "issues": [
+   {
+    "id": "RW-1",
+    "title": "Set up nightly benchmark pipeline",
+    "state": "Done",
+    "assignee": "zhang_wei",
+    "description": "Run the TPC-H and Nexmark suites every night and keep the results for comparison.",
+    "url": "http://the-agent-company.com:8091/tac/projects/ea796314-eeec-41aa-816d-58be13909bf2/issues/f27462bc-9cf1-53ee-bd1d-42aa37551fe2/"
+   },
+   {
+    "id": "RW-2",
+    "title": "Evaluate data throughput",
+    "state": "In Progress",
+    "assignee": "zhang_wei",
+    "description": "Measure end-to-end ingestion throughput with the Kafka source and compare it with the target in the Q3 plan.",
+    "url": "http://the-agent-company.com:8091/tac/projects/ea796314-eeec-41aa-816d-58be13909bf2/issues/ee680601-f771-59e4-a24c-c1e932c0233f/"
+   },
+   {
+    "id": "RW-3",
+    "title": "Reduce checkpoint latency for large state",
+    "state": "Todo",
+    "assignee": "zhang_wei",
+    "description": "Checkpoints take over 10s once state passes 50GB. Profile and cut the barrier alignment time.",
+    "url": "http://the-agent-company.com:8091/tac/projects/ea796314-eeec-41aa-816d-58be13909bf2/issues/f6b472ef-9d32-5a11-bc9b-c7a94a0e3cbe/"
+   },
+   {
+    "id": "RW-4",
+    "title": "Document materialized view refresh behaviour",
+    "state": "Backlog",
+    "assignee": "priya_sharma",
+    "description": "Users keep asking when a materialized view reflects new rows. Write it down in the docs.",
+    "url": "http://the-agent-company.com:8091/tac/projects/ea796314-eeec-41aa-816d-58be13909bf2/issues/9782fe73-6349-54e0-8d62-fb343cb2b103/"
+   },
+   {
+    "id": "RW-5",
+    "title": "Add regression tests for window joins",
+    "state": "Todo",
+    "assignee": "liu_qiang",
+    "description": "Cover tumble and hop windows with late data.",
+    "url": "http://the-agent-company.com:8091/tac/projects/ea796314-eeec-41aa-816d-58be13909bf2/issues/f96ca410-2f93-5ebe-9edf-637546b687ee/"
+   }
+  ]
+ },
+ "OpenHands": {
+  "id": "73cb74f7-a7ac-4292-a915-e2f59a09a703",
+  "states": [
+   "Backlog",
+   "Todo",
+   "In Progress",
+   "Done",
+   "Cancelled"
+  ],
+  "issues": [
+   {
+    "id": "OH-1",
+    "title": "Model: recall rate is 0",
+    "state": "Todo",
+    "assignee": "wang_fang",
+    "url": "http://the-agent-company.com:8091/tac/projects/73cb74f7-a7ac-4292-a915-e2f59a09a703/issues/5d1c8695-acfd-44c2-8d2d-e41c67cdd8c0",
+    "description": "The retrieval model returns recall 0 on the new eval set. Check the label mapping and the eval script."
+   },
+   {
+    "id": "OH-2",
+    "title": "Model: security problem",
+    "state": "Todo",
+    "assignee": "mike_chen",
+    "url": "http://the-agent-company.com:8091/tac/projects/73cb74f7-a7ac-4292-a915-e2f59a09a703/issues/8eba9853-4178-42a6-b113-e66002e8e0ab",
+    "description": "The model can be prompted to print environment variables from the sandbox. Block it and add a test."
+   },
+   {
+    "id": "OH-3",
+    "title": "Add evaluation script for SWE-bench subset",
+    "state": "Done",
+    "assignee": "wang_fang",
+    "description": "A script that runs the 50-task subset and writes a summary table.",
+    "url": "http://the-agent-company.com:8091/tac/projects/73cb74f7-a7ac-4292-a915-e2f59a09a703/issues/8a5f0c6f-e791-5de7-b946-8edf4c3e363a/"
+   },
+   {
+    "id": "OH-4",
+    "title": "Speed up sandbox start-up",
+    "state": "In Progress",
+    "assignee": "mike_chen",
+    "description": "Container start takes 40s. Reuse a warm image.",
+    "url": "http://the-agent-company.com:8091/tac/projects/73cb74f7-a7ac-4292-a915-e2f59a09a703/issues/4278fd41-9eff-578a-8777-19608de3ff6a/"
+   },
+   {
+    "id": "OH-5",
+    "title": "Write user guide for agent configuration",
+    "state": "Backlog",
+    "assignee": "priya_sharma",
+    "description": "Explain the config file options with examples.",
+    "url": "http://the-agent-company.com:8091/tac/projects/73cb74f7-a7ac-4292-a915-e2f59a09a703/issues/749d4b57-5a02-5f00-8eff-492e24b6768d/"
+   }
+  ]
+ }
+}

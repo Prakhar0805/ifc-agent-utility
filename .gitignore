@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.tmp/
+/data/
+runs/
+*.docx
+results.md

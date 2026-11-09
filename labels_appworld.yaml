@@ -1,0 +1,64 @@
+# Labels for the AppWorld APIs that show up in the tasks in handcheck.md. Same scheme as
+# labels.yaml. Not the whole benchmark (457 APIs), only what we needed.
+#
+#   reads:          private   - the user's own stuff (contacts, notes, own transactions, cards)
+#                   trusted   - catalog data nobody can write to (song info, product listings)
+#                   untrusted - written by someone else (texts, emails, venmo descriptions, requests)
+#                   none      - returns nothing worth reading
+#   sends_external: true if money or a message leaves the account
+#
+# Judgement calls: files in the file system are untrusted because their content came from
+# outside (a bill issued by the electricity company). Notes in Simple Note are private because
+# the user wrote them. Login calls are ignored.
+
+phone:
+  search_contacts:                  {reads: private,   sends_external: false}
+  search_text_messages:             {reads: untrusted, sends_external: false}
+  send_text_message:                {reads: none,      sends_external: true}
+
+simple_note:
+  search_notes:                     {reads: private,   sends_external: false}
+  show_note:                        {reads: private,   sends_external: false}
+
+file_system:
+  show_directory:                   {reads: private,   sends_external: false}
+  show_file:                        {reads: untrusted, sends_external: false}
+
+venmo:
+  show_transactions:                {reads: untrusted, sends_external: false}
+  show_received_payment_requests:   {reads: untrusted, sends_external: false}
+  show_sent_payment_requests:       {reads: private,   sends_external: false}
+  show_profile:                     {reads: untrusted, sends_external: false}
+  show_payment_cards:               {reads: private,   sends_external: false}
+  create_transaction:               {reads: none,      sends_external: true}
+  create_payment_request:           {reads: none,      sends_external: true}
+  approve_payment_request:          {reads: none,      sends_external: true}
+  deny_payment_request:             {reads: none,      sends_external: true}
+  remind_payment_request:           {reads: none,      sends_external: true}
+  like_transaction:                 {reads: none,      sends_external: true}
+  create_transaction_comment:       {reads: none,      sends_external: true}
+
+gmail:
+  search_users:                     {reads: trusted,   sends_external: false}
+  show_inbox_threads:               {reads: untrusted, sends_external: false}
+  show_thread:                      {reads: untrusted, sends_external: false}
+  show_email:                       {reads: untrusted, sends_external: false}
+  download_attachment:              {reads: untrusted, sends_external: false}
+  send_email:                       {reads: none,      sends_external: true}
+  reply_to_email:                   {reads: none,      sends_external: true}
+  forward_email_thread:             {reads: none,      sends_external: true}
+  forward_email_from_thread:        {reads: none,      sends_external: true}
+
+spotify:
+  show_song_library:                {reads: private,   sends_external: false}
+  show_liked_songs:                 {reads: private,   sends_external: false}
+  show_song:                        {reads: trusted,   sends_external: false}
+
+amazon:
+  search_products:                  {reads: trusted,   sends_external: false}
+  show_product:                     {reads: trusted,   sends_external: false}
+  show_addresses:                   {reads: private,   sends_external: false}
+  show_payment_cards:               {reads: private,   sends_external: false}
+  add_product_to_cart:              {reads: none,      sends_external: false}
+  show_cart:                        {reads: private,   sends_external: false}
+  place_order:                      {reads: none,      sends_external: true}
